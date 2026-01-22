@@ -1,21 +1,22 @@
 /* ==UserStyle==
-@name         Twitter 2015
-@author       dimden.dev
-@description  Returns great Twitter's style from 2015. Requires GoodTwitter2!
-@namespace    github.com/dimdenGD/Twitter2015
+@name         Fixed version of "Twitter 2015" by dimden
+@author       sussteve226
+@description  Modified version of Twitter 2015 by dimden. Returns twitter's look from 2015. Requires GoodTwitter2!
+@namespace    susstevedev.github.io
 @version      1.0.0
 @license      MIT
 ==/UserStyle== */
 
-@-moz-document domain("twitter.com") {
+@-moz-document domain("twitter.com"), domain("x.com") {
     .r-1niwhzg::before {
          color: #ccd6dd;
     }
-    div[data-testid="unlike"] .r-1niwhzg::before {
+    
+    button[data-testid="unlike"] .r-1niwhzg::before {
          color: rgb(224, 36, 94);
     }
     
-    div[data-testid="unretweet"] .r-1niwhzg::before {
+    button[data-testid="unretweet"] .r-1niwhzg::before {
          color: rgb(23, 191, 99);
     }
     
@@ -32,22 +33,27 @@
     div[aria-label^="Follow"] > div > span, .r-1niwhzg.r-1ets6dv.r-sdzlij > div > span {
         color: #292f33;    
     }
+    
     .r-18jsvk2 {
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
     }
+    
     .r-14j79pv {
         color: #8899a6;
         font-size: 13px;
     }
+    
     .r-14j79pv.r-1loqt21.r-1q142lx {
         place-self: center;
     }
+    
     .r-1awozwy.r-18jsvk2.r-6koalj {
         font-weight: bold;
         color: #292f33;    
     }
+    
     .gt2-legacy-profile-name {
         font-size: 22px;
         font-weight: 700;
@@ -55,57 +61,91 @@
         text-rendering: optimizeLegibility;
         font-family: sans-serif !important;
     }
+    
     .gt2-legacy-profile-nav-center {
         color: #66757f;
         font-size: 11px;
         letter-spacing: .02em;
         text-transform: uppercase;
     }
+    
     .gt2-opt-legacy-profile.gt2-page-profile .gt2-legacy-profile-nav .gt2-legacy-profile-nav-left>img {
         border-radius: 10px !important;
     }
+    
     .gt2-toggle-navbar-dropdown>img {
         border-radius: 3px !important;
     }
+    
     button {
         border-radius: 3px !important;
     }
-        .r-18jsvk2.r-6koalj.r-eqz5dr, .r-14j79pv.r-6koalj.r-eqz5dr.r-37j5jr {
+    
+    .r-18jsvk2.r-6koalj.r-eqz5dr, .r-14j79pv.r-6koalj.r-eqz5dr.r-37j5jr {
         font-size: 18px;
     }
+    
     .r-18jsvk2.r-6koalj.r-eqz5dr {
         color: black;    
     }
+    
     .r-1awozwy.r-1loqt21.r-6koalj:after {
         background-color: transparent !important;     
     }
+    
     .r-14j79pv.r-6koalj.r-eqz5dr.r-37j5jr {
         color: rgb(27, 149, 224);    
     }
-        .r-1awozwy.r-1ro0kt6.r-18u37iz, div[aria-label^='Timeline: '] {
+    
+    /*
+    .r-1awozwy.r-1ro0kt6.r-18u37iz, div[aria-label^='Timeline: '] {
         border: 1px solid #e1e8ed;
     }
+    */
     
-    .public-DraftStyleDefault-block {
+        [data-testid='tweetButtonInline'] {
+            background-color: rgb(27, 149, 224) !important;
+        }
+    
+    /*.public-DraftStyleDefault-block {
          color: black; 
-    }
+    }*/
     
     .gt2-nav .gt2-nav-right .gt2-compose, .r-1867qdf {
         border-radius: 3px;
     }
+    
     .r-1f1sjgu {
         padding-top: 8px;
         padding-bottom: 8px;
     }
+    
+    button[aria-label="Grok actions"] {
+        display: none;
+    }
+    
+    aside[aria-label="Try Premium for Free"] {
+        display: none;
+    }
+    
+    div[data-notice-id="listen-live-in-spaces"] {
+        display: none;
+    }
+    
+    /* todays news */
+    
+    .css-175oi2r.r-kemksi.r-1kqtdi0.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x > .css-175oi2r.r-13awgt0 {
+        display: none;
+    }
 }
     
-@-moz-document url-prefix("https://twitter.com/messages") {
+@-moz-document url-prefix("https://twitter.com/messages"), url-prefix("https://x.com/messages") {
     .gt2-legacy-profile-banner, .gt2-legacy-profile-nav {
         display: none;   
     }
 }
 
-@-moz-document domain("twitter.com") {
+@-moz-document domain("twitter.com"), domain("x.com") {
     .r-sdzlij, img.actioned-user-profile-img, .Tweet-avatar{
         border-radius: 5px;
     }
@@ -123,7 +163,7 @@
     }
 }
 
-@-moz-document domain("mobile.twitter.com") {
+@-moz-document domain("mobile.twitter.com"), domain("mobile.x.com") {
     .r-sdzlij{
         border-radius: 5px !important;
     }
